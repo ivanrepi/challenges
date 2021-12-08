@@ -14,10 +14,10 @@ import math
 
 def pages(base_url, search, state, username, api_token):
     pages = requests.get(base_url + search.format(state), auth=(username,api_token)).json()['total_count']
-    if STATE == 'open':
+    if state == 'open':
         pages = math.ceil(pages/100)
         return pages
-    elif STATE == 'closed':
+    elif state == 'closed':
         pages = math.ceil(pages/100)
         return pages
 
@@ -124,5 +124,5 @@ def df_status(df_pulls, base_url, key, owner, repo, commits, username, api_token
 def create_csv(df_status, field_sort, field_name):
     df_csv = df_status.sort_values(by=field_sort, ascending=False)
     df_csv.columns = field_name
-    df_csv.to_csv('../data/labs_status.csv', index=False)
+    df_csv.to_csv('pipelines_intro/damned_pipelines/data/labs_status.csv', index=False)
     return df_csv
