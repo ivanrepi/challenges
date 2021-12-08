@@ -4,7 +4,7 @@ from modules import module as md
 
 #Before starting the functions, we define all needed variables:
 
-API_TOKEN = "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"
+API_TOKEN = "TOKEN IVAN"
 USERNAME = "ivanrepi"
 BASE_URL = 'https://api.github.com/'
 KEY = 'repos/'
