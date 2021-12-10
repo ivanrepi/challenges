@@ -7,17 +7,16 @@ import json
 import math
 
 
-
 #FUNCTIONS:
 
 # Aux Function 1: You can get only 100 results per page so it is important to know the number of pages you'll need.
 
 def pages(base_url, search, state, username, api_token):
     pages = requests.get(base_url + search.format(state), auth=(username,api_token)).json()['total_count']
-    if state == 'open':
+    if STATE == 'open':
         pages = math.ceil(pages/100)
         return pages
-    elif state == 'closed':
+    elif STATE == 'closed':
         pages = math.ceil(pages/100)
         return pages
 
